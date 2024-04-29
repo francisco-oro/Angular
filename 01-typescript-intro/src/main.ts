@@ -7,8 +7,8 @@ import './style.css'
 // /import './topics/06-function-desctructuring.ts'
 // /import './topics/07-import-export.ts'
 //import './topics/08-classes.ts'
-import './topics/09-generics.ts'
-
+//import './topics/09-generics.ts'
+import './topics/10-decorators.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 Hello World

@@ -1,11 +1,9 @@
-export function whatsMyType<T> (argument: any): any {
+export function whatsMyType<T> (argument: T): T {
     return argument;
 }
 
-const amIstring = whatsMyType("Hola mundo");
-const amINumber = whatsMyType(100);
-const amIArray = whatsMyType([1,2,3,4,5])
+let amIString = whatsMyType<string>("Hola mundo"), amINumber = whatsMyType<number>(100), amIArray = whatsMyType<number[]>([1, 2, 3, 4, 5]);
 
-console.log(amIstring.split(' '));
-console.log(amINumber.split(' '));
-console.log(amIArray.split(' '));
+console.log(amIString.split('Hola Mundo'));
+console.log(amINumber.toFixed());
+console.log(amIArray.join('-'));
