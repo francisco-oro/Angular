@@ -25,9 +25,18 @@ const healCharacter = (character: Character, amount: number) => {
     character.hp += amount;
 }
 
-const strider: number{
-
+const strider = {
+    name2: 'Strider',
+    hp: 100,
+    showHp() {
+        console.log(`Health points ${ this.hp }`);
+    }
 }
+
+healCharacter( strider, 10);
+healCharacter( strider, 50);
+
+strider.showHp();
 
 //console.log({result, result2, multiplyResult});
 export {};
