@@ -19,7 +19,7 @@ export interface Name {
   nativeName: NativeName;
 }
 
-export interface US {
+export interface USD {
   name: string;
   symbol: string;
 }
@@ -158,6 +158,26 @@ export interface Zho {
   common: string;
 }
 
+export interface Slk {
+  official: string;
+  common: string;
+}
+
+export interface Spa {
+  official: string;
+  common: string;
+}
+
+export interface Srp {
+  official: string;
+  common: string;
+}
+
+export interface Swe {
+  official: string;
+  common: string;
+}
+
 export interface Translations {
   ara: Ara;
   bre: Bre;
@@ -227,7 +247,7 @@ export interface PostalCode {
   regex: string;
 }
 
-export interface RootDataItem {
+export interface Country {
   name: Name;
   tld: string[];
   cca2: string;
@@ -261,5 +281,5 @@ export interface RootDataItem {
   startOfWeek: string;
   capitalInfo: CapitalInfo;
   postalCode: PostalCode;
-}; 
-export type countrys = RootDataItem[];
+};
+export type countries = Country[];
