@@ -10,10 +10,11 @@ export class CountriesService {
   private apiUrl: string = 'https://restcountries.com/v3.1';
   constructor(private httpClient: HttpClient) { }
 
-  searchCountryByAlphaCode(code: string): Observable<Country[]> {
+  searchCountryByAlphaCode(code: string): Observable<Country | null> {
     return this.httpClient.get<Country[]>(`${this.apiUrl}/alpha/${code}`)
       .pipe(
-        catchError(() => of([])),
+        map(countries => countries.length ? countries[0] : null),
+        catchError(() => of(null)),
       );
 
   }
