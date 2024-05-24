@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {catchError, delay, map, Observable, of, tap} from "rxjs";
 import {Country} from "../interfaces/country";
 import {CacheStore} from "../interfaces/cache-store.interface";
+import {Region} from "../interfaces/region.type";
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,7 @@ export class CountriesService {
   }
 
   constructor(private httpClient: HttpClient) {
+    console.log('Countries service init')
   }
 
   private getCountriesRequest(url: string): Observable<Country[]> {
@@ -40,10 +42,16 @@ export class CountriesService {
       );
   }
   searchCountry(term: string): Observable<Country[]> {
-    return this.getCountriesRequest(`${this.apiUrl}/name/${term}`);
+    return this.getCountriesRequest(`${this.apiUrl}/name/${term}`)
+      .pipe(
+        tap(countries => this.cacheStore.byCountries = { term, countries })
+      );
   }
-  searchRegion(term: string): Observable<Country[]> {
-    return this.getCountriesRequest(`${this.apiUrl}/region/${term}`);
+  searchRegion(region: Region): Observable<Country[]> {
+    return this.getCountriesRequest(`${this.apiUrl}/region/${region}`)
+      .pipe(
+        tap(countries => this.cacheStore.byRegion = { region, countries })
+      )
   }
 
 }
