@@ -94,12 +94,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/soho-dark/theme.css",
+              "node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "0093d5d3-a9dc-4d36-b07d-e532ab8b90d8"
   }
 }
