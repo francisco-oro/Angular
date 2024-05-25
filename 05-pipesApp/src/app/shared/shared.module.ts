@@ -4,6 +4,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import {PrimeNgModule} from "../prime-ng/prime-ng.module";
 import {BrowserModule} from "@angular/platform-browser";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MenubarModule} from "primeng/menubar";
 
 
 
@@ -16,9 +17,10 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     PrimeNgModule,
     BrowserModule,
     BrowserAnimationsModule,
+    MenubarModule,
   ],
   exports: [
-    MenuComponent
+    MenuComponent,
   ]
 })
 export class SharedModule { }
