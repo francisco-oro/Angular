@@ -6,7 +6,19 @@
 <div class="grid">
   <div class="col-12 md:col-4">
     <p-card header="Net sales" subheader="registered in the current year">
-      {{ totalSells | number }}
+      {{ (totalSells + 1235) | number:'1.2-2' }}
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="Gross sales" subheader="registered in the current year">
+      {{ totalSells | currency:'HNL':'symbol-narrow':'1.6-6' }}
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="Percentage Profit" subheader="registered in the current year">
+      {{ percent | percent:'1.2-2' }}
     </p-card>
   </div>
 </div>
