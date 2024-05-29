@@ -23,15 +23,45 @@
 
   <div class="col-12 md:col-6">
     <p-card header="titlecase">
-      <ul>
+      <ol>
         <li>Date</li>
-        <li>Date | date</li>
-      </ul>
+        <li>Date | date </li>
+        <li>Date | date:'short' </li>
+        <li>Date | date:'long' </li>
+        <li>Date | date:'MMMM' </li>
+        <li>Date | date:'MMMM dd, yyyy' </li>
+      </ol>
+
+      <hr>
+      <ol>
+        <li>date | date:'long':'GMT-6'</li>
+        <li>date | date:'long':'GMT-4'</li>
+        <li>date | date:'long':'':'es-HN'</li>
+        <li>date | date:'long':'':'en-US'</li>
+        <li>date | date:'long':'':'Fr-CA'</li>
+      </ol>
     </p-card>
   </div>
 
   <div class="col-12 md:col-6">
     <p-card header="titlecase">
+      <ol>
+        <li>{{ customDate }}</li>
+        <li>{{ customDate | date }} </li>
+        <li>{{ customDate | date:'short' }} </li>
+        <li>{{ customDate | date:'long' }} </li>
+        <li>{{ customDate | date:'MMMM' }} </li>
+        <li>{{ customDate | date:'MMMM dd, yyyy' }} </li>
+      </ol>
+
+      <hr>
+      <ol>
+        <li>{{ customDate | date:'long':'GMT-6' }}</li>
+        <li>{{ customDate | date:'long':'GMT-4' }}</li>
+        <li>{{ customDate | date:'long':'':'es-HN' }}</li>
+        <li>{{ customDate | date:'long':'':'en-US' }}</li>
+        <li>{{ customDate | date:'long':'':'Fr-CA' }}</li>
+      </ol>
     </p-card>
   </div>
 </div>

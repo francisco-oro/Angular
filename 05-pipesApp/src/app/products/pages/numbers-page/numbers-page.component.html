@@ -1,1 +1,12 @@
-<p>numbers-page works!</p>
+<p-panel header="Numeric Pipes" class="p-1">
+  <p>Pipes included in Angular - Usually in the Common Module</p>
+</p-panel>
+
+
+<div class="grid">
+  <div class="col-12 md:col-4">
+    <p-card header="Net sales" subheader="registered in the current year">
+      {{ totalSells | number }}
+    </p-card>
+  </div>
+</div>
