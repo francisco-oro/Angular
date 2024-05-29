@@ -43,10 +43,11 @@ export class UncommonPageComponent {
     tap( value => console.log('tap: ', value))
   );
 
-  public promiseValue = new Promise((resolve, reject) => {
+  public promiseValue: Promise<string> = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve('We have another promise.');
       console.log('We have data in the promise');
+      this.person.name = 'Another name';
     }, 3500);
   })
 }
