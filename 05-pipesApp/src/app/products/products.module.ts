@@ -9,6 +9,8 @@ import {PrimeNgModule} from "../prime-ng/prime-ng.module";
 import {TableModule} from "primeng/table";
 import {OrderComponent} from './pages/order/order.component';
 import {ToggleCasePipe} from "./pipes/toggle-case.pipe";
+import { CanFlyPipe } from './pipes/can-fly.pipe';
+import { SortByPipe } from './pipes/sort-by.pipe';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import {ToggleCasePipe} from "./pipes/toggle-case.pipe";
     OrderComponent,
 
     //   Pipes
-    ToggleCasePipe
+    ToggleCasePipe,
+     CanFlyPipe,
+     SortByPipe
   ],
   imports: [
     CommonModule,
