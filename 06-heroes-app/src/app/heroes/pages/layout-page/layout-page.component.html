@@ -1,3 +1,11 @@
-<h1>Hero layout!</h1>
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav mode="push" [ngStyle]="{ width: '250px'}"></mat-sidenav>
+  <mat-toolbar>
+    <span>Menu</span>
+    <span class="spacer"></span>
+    <button mat-icon-button (click)="sidenav"></button>
+  </mat-toolbar>
+</mat-sidenav-container>
+
+
 <router-outlet/>
-<h5>Footer</h5>
