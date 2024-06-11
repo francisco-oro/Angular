@@ -18,6 +18,7 @@ export class SearchPageComponent {
   }
 
   searchHero(){
+
     const value : string = this.searchInput.value || '';
 
     this.heroesService.getSuggestions(value)
