@@ -13,7 +13,8 @@
       "publisher": "DC Comics",
       "alter_ego": "Kal-El",
       "first_appearance": "Action Comics #1",
-      "characters": "Kal-El"
+      "characters": "Kal-El",
+      "alt_img": "https://i.pinimg.com/736x/ec/a9/8b/eca98b8528bbdc2486e5935e8a9908be.jpg"
     },
     {
       "id": "dc-flash",
@@ -166,6 +167,15 @@
       "alter_ego": "Bruce Wayne",
       "first_appearance": "Detective Comics #27",
       "characters": "Bruce Wayne"
+    },
+    {
+      "id": "czLcJm9",
+      "superhero": "Francisco",
+      "publisher": "Marvel Comics",
+      "alter_ego": "Oro",
+      "first_appearance": "Codec Udemy 2015",
+      "characters": "Francisco",
+      "alt_img": "https://cdn.britannica.com/99/124299-050-4B4D509F/Linus-Torvalds-2012.jpg"
     }
   ]
 }
