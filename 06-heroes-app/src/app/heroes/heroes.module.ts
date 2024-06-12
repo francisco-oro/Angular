@@ -12,6 +12,9 @@ import { CardComponent } from './components/card/card.component';
 import { HeroImagePipe } from './pipes/hero-image.pipe';
 import {ReactiveFormsModule} from "@angular/forms";
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import {MatButtonModule} from "@angular/material/button";
+import {MatDialogModule} from "@angular/material/dialog";
+import {CdkTrapFocus} from "@angular/cdk/a11y";
 
 
 @NgModule({
@@ -25,11 +28,12 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     HeroImagePipe,
     ConfirmDialogComponent
   ],
-    imports: [
-        CommonModule,
-        HeroesRoutingModule,
-        MaterialModule,
-        ReactiveFormsModule
-    ]
+  imports: [
+    CommonModule,
+    HeroesRoutingModule,
+    MaterialModule,
+    ReactiveFormsModule,
+    CdkTrapFocus,
+  ]
 })
 export class HeroesModule { }

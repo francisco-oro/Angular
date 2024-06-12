@@ -1,12 +1,12 @@
-import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {Hero, Publisher} from "../../interfaces/hero.interface";
 import {HeroesService} from "../../services/heroes.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {switchMap} from "rxjs";
+import {filter, switchMap, tap} from "rxjs";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {MatDialog} from "@angular/material/dialog";
 import {ConfirmDialogComponent} from "../../components/confirm-dialog/confirm-dialog.component";
+import {Component, OnInit} from "@angular/core";
 
 @Component({
   selector: 'app-new-page',
@@ -82,9 +82,25 @@ export class NewPageComponent implements OnInit {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: this.heroForm.value
     });
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    dialogRef.afterClosed()
+      .pipe(
+        filter((result:boolean) => result),
+        switchMap(() => this.heroesService.deleteHeroById(this.currentHero.id)),
+        filter((wasDeleted:boolean) => wasDeleted),
+        tap(() => this.router.navigate(["/heroes/list"]))
+      )
+      .subscribe()
+    // dialogRef.afterClosed().subscribe(result => {
+    //   if(!result) return;
+    //   this.heroesService.deleteHeroById(this.currentHero.id)
+    //     .subscribe({
+    //       next: (wasDeleted: Boolean) => {
+    //         if (wasDeleted){
+    //           this.router.navigate(["/heroes/list"]);
+    //         }
+    //       }
+    //     });
+    // });
   }
 
   private showSnackBar(message: string): void {
