@@ -8,7 +8,8 @@ import {Router} from "@angular/router";
   styles: ``
 })
 export class LoginPageComponent {
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService,
+              private router: Router) {
   }
 
   onLogin(): void {
