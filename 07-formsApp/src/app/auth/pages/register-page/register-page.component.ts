@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {registerDispatcher} from "@angular/core/primitives/event-dispatch";
 import {ValidatorsService} from "../../../shared/service/validators.service";
 import {EmailValidatorService} from "../../../shared/validators/email-validator.service";
 
@@ -16,6 +15,10 @@ export class RegisterPageComponent {
     username: ['', [Validators.required, this.validatorsService.cantBeStrider]],
     password: new FormControl('', [Validators.required, Validators.minLength(6)]),
     password2: new FormControl('', [Validators.required]),
+  }, {
+    validators: [
+      this.validatorsService.isFieldOneEqualFieldTwo('password', 'password2')
+    ]
   });
 
   constructor(
