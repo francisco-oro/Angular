@@ -22,7 +22,7 @@ export class DynamicPageComponent {
     return this.myForm.get('favoriteGames') as FormArray;
   }
 
-  isNotValidField(field: string): boolean | null {
+  isNotValidField( field: string): boolean | null {
     return this.myForm.controls[field].errors && this.myForm.controls[field].touched;
   }
 
