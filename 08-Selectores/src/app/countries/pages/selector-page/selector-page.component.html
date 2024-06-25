@@ -1,1 +1,24 @@
-<p>selector-page works!</p>
+<h1 class="mt-5">Nested selectors</h1>
+<hr>
+<form [formGroup]="myForm">
+<!--  Region -->
+  <div class="row mb-3">
+    <div class="col">
+      <label class="form-label">Continent:</label>
+      <select formControlName="region" class="form-control">
+        <option value="">-- SELECT CONTINENT --</option>
+        <option value="africa">Africa</option>
+      </select>
+
+    </div>
+  </div>
+</form>
+
+
+<h3>Form</h3>
+<code>
+  {{ myForm.value | json }}
+</code>
+<p>
+  is form valid: {{ myForm.valid }}
+</p>

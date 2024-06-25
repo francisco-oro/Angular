@@ -4,12 +4,16 @@ import {NgModule} from "@angular/core";
 
 
 const routes: Routes = [
-  { path: "**", component: SelectorPageComponent}
+  { path: "",
+    children: [
+      { path: 'selector', component: SelectorPageComponent },
+      { path: '**', redirectTo: 'selector' },
+    ]}
 ]
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export  class CountriesRoutingModule { }
