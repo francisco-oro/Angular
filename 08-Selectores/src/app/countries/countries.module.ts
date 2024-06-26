@@ -13,6 +13,6 @@ import {ReactiveFormsModule} from "@angular/forms";
     CommonModule,
     CountriesRoutingModule,
     ReactiveFormsModule
-  ]
+  ],
 })
 export class CountriesModule { }
